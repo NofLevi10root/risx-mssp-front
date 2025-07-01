@@ -114,70 +114,84 @@ function Modules({
           {/* <div className='top-of-page-center'> placeholder for dropDown  </div> */}
 
           <div className="top-of-page-right">
-            <div
-              style={{
-                width: 150,
-                marginRight: 15,
-                justifyContent: "center",
-                alignItems: "center",
-                display: "flex",
-                flexDirection: "column",
-              }}
-            >
-              <button
-                className={`btn-type2 "btn-type2-no_btn"`}
-                onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
-                style={{
-                  width: "100%",
-                  minWidth: "115px",
-                  maxWidth: "122px",
-                  paddingLeft: "var(--space-c)",
-                  paddingRight: "calc(var(--space-c) - 5px)",
-                  height: 36,
-                }}
-              >
-                <p
-                  className="font-type-menu cutLongLine"
-                >
-                  {ChosenTag}
-                </p>
-              </button>
+            {/* CSS Grid layout container for proper column alignment */}
+            <div className="modules-header-tags-container">
+              {/* Empty grid items to align with table columns */}
+              <div></div> {/* Checkbox column spacer */}
+              <div></div> {/* Logo column spacer */}
+              <div></div> {/* Module name column spacer */}
+              <div className="hide-on-small-screen1"></div> {/* Description column spacer */}
+              <div className="hide-on-small-screen3"></div> {/* Read More button column spacer */}
+              <div></div> {/* Action button column spacer */}
+              
+              {/* Tags dropdown - positioned in 7th grid column */}
               <div
-                className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
                 style={{
-                  top: 80,
                   justifyContent: "center",
                   alignItems: "center",
                   display: "flex",
                   flexDirection: "column",
-                  position: "absolute",
+                  position: "relative",
                 }}
               >
-                {AllTags?.map((tt) => {
-                  // console.log(AllTags, "ttttt", tt);
-                  if (tt == ChosenTag) {
-                    return;
-                  }
-                  return (
-                    <button
-                      className={`btn-type2 "btn-type2-no_btn"`}
-                      onClick={() => HandleTagSelection(tt)}
-                      style={{
-                        width: "100%",
-                        minWidth: "115px",
-                        maxWidth: "122px",
-                        paddingLeft: "var(--space-c)",
-                        paddingRight: "calc(var(--space-c) - 5px)",
-                        backgroundColor: "var(--color-Grey2)",
-                      }}
-                    >
-                      <p className="font-type-menu" style={{}}>
-                        {tt}
-                      </p>
-                    </button>
-                  );
-                })}
+                <button
+                  className={`btn-type2 "btn-type2-no_btn"`}
+                  onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
+                  style={{
+                    width: "100%",
+                    minWidth: "115px",
+                    maxWidth: "122px",
+                    paddingLeft: "var(--space-c)",
+                    paddingRight: "calc(var(--space-c) - 5px)",
+                    height: 36,
+                  }}
+                >
+                  <p className="font-type-menu cutLongLine">
+                    {ChosenTag}
+                  </p>
+                </button>
+                <div
+                  className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
+                  style={{
+                    top: 80,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    display: "flex",
+                    flexDirection: "column",
+                    position: "absolute",
+                    zIndex: 10,
+                  }}
+                >
+                  {AllTags?.map((tt) => {
+                    // console.log(AllTags, "ttttt", tt);
+                    if (tt == ChosenTag) {
+                      return;
+                    }
+                    return (
+                      <button
+                        key={tt}
+                        className={`btn-type2 "btn-type2-no_btn"`}
+                        onClick={() => HandleTagSelection(tt)}
+                        style={{
+                          width: "100%",
+                          minWidth: "115px",
+                          maxWidth: "122px",
+                          paddingLeft: "var(--space-c)",
+                          paddingRight: "calc(var(--space-c) - 5px)",
+                          backgroundColor: "var(--color-Grey2)",
+                        }}
+                      >
+                        <p className="font-type-menu" style={{}}>
+                          {tt}
+                        </p>
+                      </button>
+                    );
+                  })}
+                </div>
               </div>
+              
+              <div className="hide-on-small-screen2"></div> {/* Last run column spacer */}
+              <div></div> {/* Settings column spacer */}
             </div>
 
             <Search_comp
