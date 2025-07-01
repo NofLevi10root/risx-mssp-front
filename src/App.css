@@ -386,16 +386,64 @@ p{color: var(--color-White);
   align-items: center;
 }
 
+/* Fix for modules header alignment with tags column */
+.modules-header-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
 
+.tags-dropdown-container {
+  position: relative;
+  /* This margin right aligns the tags button with the tags column in the table */
+  margin-right: calc(150px + var(--space-a) + var(--space-a) + 95px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
+}
+
+/* Responsive adjustments for tags alignment */
+@media only screen and (max-width: 1600px) {
+  .tags-dropdown-container {
+    /* Adjust for when description column is hidden */
+    margin-right: calc(150px + var(--space-a) + var(--space-a) + 95px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
+  }
+}
+
+@media only screen and (max-width: 1500px) {
+  .tags-dropdown-container {
+    /* Adjust for when last run column is hidden */
+    margin-right: calc(150px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .tags-dropdown-container {
+    /* Adjust for when read more column is hidden */
+    margin-right: calc(150px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  .tags-dropdown-container {
+    /* When layout becomes vertical, reset alignment */
+    margin-right: 15px;
+  }
+}
 
 @media only screen and (max-width: 550px) {
   .top-of-page-right {
     width: 100%;
+  }
+  
+  .modules-header-controls {
+    width: 100%;
+    justify-content: space-between;
+  }
+  
+  .tags-dropdown-container {
+    margin-right: 0;
+  }
 }
 
 
-
-}
 
 @media only screen and (max-width: 550px) {
   .top-of-page-right > .input-type1{
@@ -1107,4 +1155,3 @@ height: 100%;
 
 
  .loader-type-a img{width: 150px }
-
