@@ -1,4 +1,4 @@
- 
+
   
  
 .PreviewBox{
@@ -444,4 +444,139 @@ Color-Grey1 */
   max-width: 100%;          /* Ensure it doesn't overflow horizontally */
 }
 
+/* CSS Grid Layout for Header and Table Column Alignment */
+.modules-table-container {
+  display: grid;
+  grid-template-columns: 
+    20px      /* Checkbox column */
+    108px     /* Logo column */
+    250px     /* Module name column */
+    1fr       /* Description column - flexible */
+    120px     /* Read More button column */
+    122px     /* Action button column */
+    150px     /* Tags column - fixed width */
+    95px      /* Last run column */
+    40px;     /* Settings column */
+  gap: var(--space-a);
+  width: 100%;
+}
 
+.modules-header-tags-container {
+  /* Position the tags dropdown to align with the tags table column */
+  display: grid;
+  grid-template-columns: 
+    20px      /* Checkbox column */
+    108px     /* Logo column */
+    250px     /* Module name column */
+    1fr       /* Description column - flexible */
+    120px     /* Read More button column */
+    122px     /* Action button column */
+    150px     /* Tags column - this is where we want alignment */
+    95px      /* Last run column */
+    40px;     /* Settings column */
+  gap: var(--space-a);
+  width: 100%;
+}
+
+.modules-header-tags-container > *:nth-child(7) {
+  /* Target the 7th grid item (tags column) */
+  justify-self: start;
+}
+
+/* Responsive breakpoints to match table behavior */
+@media (max-width: 1600px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      250px     /* Module name column */
+      /* Description column hidden */
+      120px     /* Read More button column */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      95px      /* Last run column */
+      40px;     /* Settings column */
+  }
+}
+
+@media (max-width: 1500px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      250px     /* Module name column */
+      120px     /* Read More button column */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      /* Last run column hidden */
+      40px;     /* Settings column */
+  }
+}
+
+@media (max-width: 1300px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      250px     /* Module name column */
+      /* Read More button column hidden */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      40px;     /* Settings column */
+  }
+}
+
+@media (max-width: 1200px) {
+  /* When table layout changes to vertical, reset grid */
+  .modules-header-tags-container {
+    display: flex;
+    justify-content: flex-end;
+    gap: var(--space-c);
+  }
+}
+
+@media (max-width: 1000px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      /* Module name column hidden */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      40px;     /* Settings column */
+  }
+}
+
+@media (max-width: 850px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      /* Last run column hidden again */
+      40px;     /* Settings column */
+  }
+}
+
+@media (max-width: 640px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      40px;     /* Settings column */
+  }
+}
+
+@media (max-width: 540px) {
+  .modules-header-tags-container {
+    grid-template-columns: 
+      20px      /* Checkbox column */
+      108px     /* Logo column */
+      122px     /* Action button column */
+      150px     /* Tags column */
+      40px;     /* Settings column */
+  }
+}
