@@ -46,7 +46,7 @@ export default function App() {
 
   useEffect(() => {
     console.log("Hello World !!!!!!");
-    console.log("Version Of Site is 0.8.9 ");
+    console.log("Version Of Site is 0.8.9fuck ");
   }, []);
 
   return (
