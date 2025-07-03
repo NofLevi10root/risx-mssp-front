@@ -384,62 +384,44 @@ p{color: var(--color-White);
 .top-of-page-right{
   display: flex;
   align-items: center;
+  gap: var(--space-c); /* Add gap for spacing between search and tags container */
 }
 
-/* Fix for modules header alignment with tags column */
-.modules-header-controls {
-  display: flex;
+/* New Grid styles for modules header */
+.modules-header-tags-container {
+  display: grid;
+  grid-template-columns: 40px 108px 250px 1fr 120px 122px 122px 95px 40px; /* Define 9 columns */
   align-items: center;
-  gap: 15px;
+  gap: var(--space-b); /* Adjust gap as needed, using a variable for consistency */
+  flex-grow: 1; /* Allow the grid to take available space */
 }
 
-.tags-dropdown-container {
-  position: relative;
-  /* This margin right aligns the tags button with the tags column in the table */
-  margin-right: calc(150px + var(--space-a) + var(--space-a) + 95px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
-}
-
-/* Responsive adjustments for tags alignment */
+/* Responsive adjustments for the grid container itself */
 @media only screen and (max-width: 1600px) {
-  .tags-dropdown-container {
-    /* Adjust for when description column is hidden */
-    margin-right: calc(150px + var(--space-a) + var(--space-a) + 95px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
+  .modules-header-tags-container {
+    /* Example: Adjust column template if 'Description' column spacer is hidden via JS/React logic */
+    /* This assumes the div with className="hide-on-small-screen1" is hidden by other means */
+    /* grid-template-columns: 40px 108px 250px 120px 122px 122px 95px 40px; */
+    /* If hide-on-small-screenX classes use display:none, the grid will auto-adjust.
+       If specific column counts are needed, adjust grid-template-columns here. */
   }
 }
 
-@media only screen and (max-width: 1500px) {
-  .tags-dropdown-container {
-    /* Adjust for when last run column is hidden */
-    margin-right: calc(150px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
-  }
-}
+/* Add more media queries as needed to adjust grid-template-columns
+   based on which hide-on-small-screenX elements are active/hidden */
 
-@media only screen and (max-width: 1300px) {
-  .tags-dropdown-container {
-    /* Adjust for when read more column is hidden */
-    margin-right: calc(150px + var(--space-a) + var(--space-a) + 28px + var(--space-a));
-  }
-}
-
-@media only screen and (max-width: 1200px) {
-  .tags-dropdown-container {
-    /* When layout becomes vertical, reset alignment */
-    margin-right: 15px;
-  }
-}
 
 @media only screen and (max-width: 550px) {
   .top-of-page-right {
     width: 100%;
+    flex-direction: column; /* Stack items vertically on small screens */
   }
   
-  .modules-header-controls {
-    width: 100%;
-    justify-content: space-between;
-  }
-  
-  .tags-dropdown-container {
-    margin-right: 0;
+  .modules-header-tags-container {
+    grid-template-columns: auto 1fr auto; /* Example: Checkbox, Name, Tags, Settings for very small screens */
+                                      /* Or simply 1fr if stacking all controls */
+    width: 100%; /* Ensure it takes full width */
+    /* Consider hiding more non-essential spacers/columns here if not done by hide-on-small-screenX classes */
   }
 }
 
