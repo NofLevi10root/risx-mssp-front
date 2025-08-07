@@ -681,8 +681,8 @@ function PreviewBoxes_main_modules({
                           className={`btn-type2 "btn-type2-no_btn"`}
                           onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
                           style={{
-                            minWidth: "115px",
-                            maxWidth: "122px",
+                            minWidth: "140px",  // Changed from 115px to better fill the cell
+                            maxWidth: "145px",  // Changed from 122px to better fill the cell
                             paddingLeft: "var(--space-c)",
                             paddingRight: "calc(var(--space-c) - 5px)",
                             height: 36,
@@ -705,8 +705,8 @@ function PreviewBoxes_main_modules({
                             flexDirection: "column",
                             position: "absolute",
                             zIndex: 100,
-                            minWidth: "115px",
-                            maxWidth: "122px",
+                            minWidth: "140px",  // Changed to match button width
+                            maxWidth: "145px",  // Changed to match button width
                             width: "100%",
                             backgroundColor: "var(--color-Grey3)",
                             borderRadius: "var(--elemtns-round-corner-medium)",
