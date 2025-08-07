@@ -664,9 +664,19 @@ function PreviewBoxes_main_modules({
                     <p className="font-type-menu Color-Grey1">Action</p>
                   </th>
                   {ShowAssets && (
-                    <th style={{ minWidth: "150px", maxWidth: "150px", position: "relative" }}>
+                    <th style={{ 
+                      minWidth: "150px", 
+                      maxWidth: "150px", 
+                      position: "relative",
+                      textAlign: "center" // Center the header content
+                    }}>
                       {/* Tags dropdown button in header */}
-                      <div style={{ position: "relative", display: "inline-block" }}>
+                      <div style={{ 
+                        position: "relative", 
+                        display: "flex",
+                        justifyContent: "center", // Center the button horizontally
+                        alignItems: "center"
+                      }}>
                         <button
                           className={`btn-type2 "btn-type2-no_btn"`}
                           onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
@@ -687,7 +697,8 @@ function PreviewBoxes_main_modules({
                           className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
                           style={{
                             top: "calc(100% + 4px)",
-                            left: 0,
+                            left: "50%", // Center horizontally
+                            transform: "translateX(-50%)", // Adjust for true center
                             justifyContent: "center",
                             alignItems: "center",
                             display: DropdownTagsShow ? "flex" : "none",
@@ -959,12 +970,13 @@ function PreviewBoxes_main_modules({
                             </div>
                           </button>
                         </td>
-                        {/* Assets btn */}
+                        {/* Assets btn - Tags column content */}
                         <td
                           style={{
                             visibility: box_type === "velociraptor" && "hidden",
-                            minWidth: "115px",
-                            maxWidth: "122px",
+                            minWidth: "150px",
+                            maxWidth: "150px",
+                            textAlign: "center" // Center the tags content
                           }}
                           className={`${
                             box_type === "velociraptor" &&
@@ -978,6 +990,9 @@ function PreviewBoxes_main_modules({
                                 maxWidth: 150,
                                 overflow: "hidden",
                                 textOverflow: "ellipsis",
+                                display: "flex",
+                                justifyContent: "center", // Center tags horizontally
+                                alignItems: "center"
                               }}
                               className="column column-small  "
                               onClick={() =>
@@ -993,24 +1008,24 @@ function PreviewBoxes_main_modules({
                               ) : null}
                               {/* ? (<p className='ml-a    font-type-txt   Color-Red   '> Undefined  </p> ) : null  } */}
                               {Info?.arguments?.tags?.length == 0 ? (
-                                <p className="ml-a  font-type-txt    tagit_type1">
+                                <p className="font-type-txt tagit_type1">
                                   No Tags
                                 </p>
                               ) : null}
                               {Info?.arguments?.tags?.length === 1 ? (
                                 <p
-                                  className="ml-a  font-type-txt   Color-Blue-Glow tagit_type1 cutLongLine"
-                                  style={{ maxWidth: "60%" }}
+                                  className="font-type-txt Color-Blue-Glow tagit_type1 cutLongLine"
+                                  style={{ maxWidth: "80%" }}
                                 >
                                   {Info?.arguments?.tags[0]}
                                 </p>
                               ) : null}
                               {Info?.arguments?.tags?.length > 1 ? (
                                 <>
-                                  <p className="ml-a  font-type-txt   Color-Blue-Glow tagit_type1">
+                                  <p className="font-type-txt Color-Blue-Glow tagit_type1">
                                     {Info?.arguments?.tags[0]}
                                   </p>{" "}
-                                  <p className=" ml-a font-type-txt   Color-Grey1  ">
+                                  <p className="ml-a font-type-txt Color-Grey1">
                                     +{Info?.arguments?.tags?.length - 1}
                                   </p>
                                 </>
