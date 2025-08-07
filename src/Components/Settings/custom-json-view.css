@@ -1,0 +1,33 @@
+ 
+
+  .w-json-view-container{
+    font-size: 15px !important;
+
+ 
+}
+
+
+  .w-rjv-object-size{
+    display: none;
+}
+
+.w-rjv-quotes{
+  /* color: var(--color-DB-Blue-Glow)!important; */
+  color: var(--color-White)!important;
+}
+
+.w-rjv-ellipsis{
+    color: var(--color-DB-Blue-Glow)!important;  
+}
+
+.w-rjv-object-key{
+    color: var(--color-Grey1)!important;  
+}
+
+ .w-rjv-brackets-start, .w-rjv-brackets-end , .w-rjv-curlybraces-end , .w-rjv-curlybraces-start{
+    color: var(--color-Orange)!important;  
+ }
+
+ .border-left{
+    color: var(--color-Grey5)!important;  
+ }

@@ -1,0 +1,164 @@
+ .login-page-all{
+height: 100vh;
+width: 100%;
+display: flex;
+align-items: stretch;
+justify-content:stretch;
+ }
+
+.login-left-design{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color:var(--color-White); */
+  background-color:#e9e9e9;
+ 
+
+  
+  width: 100%;
+}
+
+.login-right-design{
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* background-color: rgba(255, 12, 105, 0.411); */
+  width: 320px;
+  padding: var(--space-e)   ;
+  background-color: var(--color-Grey5);
+  /* margin-right: -4px; */
+}
+
+.login-form{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  gap: var(--space-b);
+  /* margin-left: 3px; */
+}
+
+
+.input-wrapper .input-type2{
+  padding-left:  calc(  var( --space-d) +  var( --space-b)   );
+    
+  }
+  
+
+.login-form  .input-wrapper .input-type2{
+  /* width: calc(100% - var(  --line-width-small) -  var( --space-b)*2 -2px ); */
+  width: calc(100% - var(  --line-width-small) -  var( --space-b) -   var( --space-d) -  var( --space-b)     );
+margin: 0;
+ 
+ 
+}
+
+.input-wrapper {
+  width: 100%;
+  
+  height: auto;
+   position: relative;/*
+  display: inline-block; */
+}
+
+.input-wrapper svg  {
+  position: absolute;
+  left: var( --space-b);  
+  top: 50%; 
+  transform: translateY(-50%); 
+ 
+}
+
+ 
+.input-wrapper svg  {
+  pointer-events: none; /* This line ensures SVG doesn't capture clicks */
+ 
+
+}
+ 
+.input-wrapper svg path{
+ 
+
+  stroke:var(--color-Grey1); 
+   transition: var(--transition-fast);
+
+}
+
+.input-wrapper:hover svg path{
+  stroke:var(--color-DB-Blue-Active); 
+}
+
+
+ .input-type2::placeholder{
+  transition: var(--transition-fast);
+  color:var(--color-Grey1); 
+}
+
+.input-wrapper:hover .input-type2::placeholder{
+ 
+  color:var(--color-DB-Blue-Active); 
+}
+
+
+
+.input-wrapper:focus-within svg path{
+  stroke:var(--color-DB-Blue-Glow); 
+}
+
+
+.input-wrapper:focus-within  .input-type2::placeholder{
+  color:var(--color-DB-Blue-Glow); 
+}
+
+
+.login-marketing-center{
+ }
+
+
+ .logosBox-out{
+  position: relative;
+ width: 100%;
+ }
+
+ .logosBox-in{
+
+  left: 50%;
+  transform: translate(-50%, -50%); /* This centers the element */
+
+  position: absolute;
+  display: flex;
+  align-items: center;
+  height: 40px;
+  justify-content: center;
+  gap:var(--space-e)
+  
+ }
+
+ .logos{
+  width:auto;
+  max-width:   130px;
+
+  height: auto;
+  max-height:   40px;
+ }
+
+
+ @keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+@keyframes fadeOut {
+  from { opacity: 1; }
+  to { opacity: 0; }
+}
+
+.fade-in {
+  animation: fadeIn 0.5s forwards;
+}
+
+.fade-out {
+  animation: fadeOut 0.5s forwards;
+}
+
+ 

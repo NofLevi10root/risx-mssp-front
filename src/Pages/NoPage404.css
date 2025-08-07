@@ -1,0 +1,15 @@
+ 
+.nopage-design{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* background-color:var(--color-White); */
+  background-color:var(--color-Grey5);
+
+  
+  width: 100%;
+}
+
+ 
+
+  

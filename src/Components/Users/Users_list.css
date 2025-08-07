@@ -1,0 +1,42 @@
+.results_item_in_list{
+    margin-right: var( --space-b);
+    width: 12%; 
+    max-width :100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+   /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+   align-items: center;
+   transition: var(--transition-fast)
+}
+
+
+.list-item-small{
+    max-width :530px;
+    /* width: 40%;    */
+ 
+}
+
+
+ 
+
+.inputs{
+    width: 100%;
+ 
+}
+
+.inputs div input{
+    width: calc(100% - var(--space-c) - var(--line-width-small)  - var(--line-width-small) - var(--line-width-small));
+    }
+    input[type='number'] {
+        -moz-appearance:textfield;
+    }
+    
+    input::-webkit-outer-spin-button,
+    input::-webkit-inner-spin-button {
+        -webkit-appearance: none;
+    }

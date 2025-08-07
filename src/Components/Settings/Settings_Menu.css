@@ -1,0 +1,143 @@
+.SubMenu-all {
+  /* Add any styles if needed */
+}
+.SubMenu-unit {
+  position: relative;
+  display: inline-block; /* Ensure each submenu unit takes only the necessary width */
+}
+
+.SubMenu-submenu {
+  position: absolute;
+  top: 100%; /* Position below the button */
+  left: 0;
+  background-color: var(--color-Grey4);
+  /* background-color: seagreen; */
+
+  /* background-color: white;
+  box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2); */
+  /* padding: var(--space-b); */
+
+  z-index: 100; /* Ensure submenu appears above other content */
+}
+
+.SubMenu-submenu .SubMenu-submenu-item:last-child,
+.SubMenu-submenu {
+  border-radius: 0 0 var(--boxes-round-corner) var(--boxes-round-corner);
+}
+
+.SubMenu-submenu-item {
+  padding: calc(var(--space-b) + var(--space-a)) var(--space-c);
+  /* width: 100% ; */
+  background-color: var(--color-Grey4);
+  /* background-color: sandybrown; */
+
+  transition: var(--transition-fast);
+}
+
+.SubMenu-submenu-item p {
+  text-wrap: nowrap;
+  color: var(--color-White);
+  transition: var(--transition-fast);
+}
+
+.SubMenu-submenu-item:hover {
+  background-color: var(--color-DB-Blue-Hover);
+  cursor: pointer;
+}
+
+.SubMenu-submenu-item:hover p {
+  color: var(--color-DB-Blue-Glow);
+  transition: var(--transition-fast);
+}
+
+.SubMenu-in {
+  display: flex;
+  flex-wrap: wrap;
+  background-color: var(--color-Grey5);
+
+  width: auto;
+  border-radius: var(--boxes-round-corner);
+  /* min-width: 120px; */
+}
+
+.SubMenu-btn {
+  display: flex;
+  align-items: center;
+  background-color: transparent;
+
+  transition: var(--transition-fast);
+  margin: 0;
+  padding: 0;
+  border: 0;
+  border-radius: var(--boxes-round-corner);
+}
+
+.SubMenu-btn p {
+  color: var(--color-White);
+  padding: calc(var(--space-b) + var(--space-a)) var(--space-c);
+  transition: var(--transition-fast);
+}
+
+.SubMenu-unit:first-child .SubMenu-btn {
+  /* border-radius: var(--boxes-round-corner) 0 0 var(--boxes-round-corner); */
+}
+
+.SubMenu-gap {
+  visibility: visible;
+  width: 2px;
+  height: 50%;
+  background-color: var(--color-Grey3);
+}
+
+.SubMenu-btn:last-child .SubMenu-gap {
+  visibility: hidden;
+}
+
+.SubMenu-btn:hover {
+  background-color: var(--color-DB-Blue-Hover);
+
+  cursor: pointer;
+  /* width: 100%; */
+}
+
+.SubMenu-btn:hover p,
+.SubMenu-btn-active p {
+  color: var(--color-DB-Blue-Glow);
+
+  transition: var(--transition-fast);
+}
+
+.SubMenu-btn:hover .SubMenu-gap,
+.SubMenu-btn-active .SubMenu-gap {
+  visibility: hidden;
+  transition: var(--transition-fast);
+}
+
+.SubMenu-btn:active,
+.SubMenu-btn-active {
+  background-color: var(--color-DB-Blue-Hover-Real);
+}
+
+.SubMenu-btn:hover:disabled {
+  background-color: var(--color-DB-Blue-Hover-Real);
+
+  transition: var(--transition-fast);
+  cursor: auto;
+  width: 100%;
+}
+
+.SubMenu-btn:hover:disabled p,
+.SubMenu-btn-active p {
+  color: var(--color-DB-Blue-Glow);
+
+  transition: var(--transition-fast);
+}
+
+.SubMenu-btn-active-and-clickable {
+  /* background-color: sandybrown; */
+  background-color: var(--color-DB-Blue-Hover-Real);
+}
+.SubMenu-btn-active-and-clickable p {
+  /* background-color: sandybrown; */
+  color: var(--color-DB-Blue-Glow);
+}

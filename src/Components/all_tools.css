@@ -1,0 +1,162 @@
+ 
+
+.all-tools-main{
+  background:var(--color-Grey5);
+  border-radius: var(--boxes-round-corner);
+  padding: var( --space-b)   calc(var( --space-b) + var( --space-a));
+  height: "auto";
+  min-height: "500px";
+  /* max-height: "500px"; */
+  min-width: 200px;
+  display: flex;
+  justify-content:space-between;
+  transition: var(--transition-fast);
+  align-items: center;
+  /* width: 8%;  */
+  /* box-shadow: 0px 0px 22px 0px rgba(0, 0, 0, 0.185); */
+  }
+
+
+  @media (max-width: 1200px) {
+    .all-tools-main {
+   flex-direction: column;
+    }
+  }
+
+
+.view-on-small-screen_if_vertical{
+  display: none;
+}
+
+  @media (max-width: 1600px) {
+    .hide-on-small-screen1 {
+      display: none;
+    }
+  }
+  
+  
+  @media (max-width: 1500px) {
+    .hide-on-small-screen2 {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 1300px) {
+    .hide-on-small-screen3 {
+      display: none;
+    }
+  }
+  
+  @media (max-width: 1200px) {
+    .hide-on-small-screen_if_vertical {  display: none; }
+    .view-on-small-screen_if_vertical {  display: table-cell; }
+
+  }
+
+
+
+  @media (max-width: 1200px) {
+    .hide-on-small-screen1, .hide-on-small-screen2 , .hide-on-small-screen3      {
+      display: table-cell; /* Ensure the <td> behaves as a table cell */
+
+    }
+  }
+  @media (max-width: 1000px) {
+    .hide-on-small-screen1{  display: none; }
+ 
+  }
+  @media (max-width: 850px) {
+    .hide-on-small-screen2{  display: none; }
+ 
+  }
+
+  @media (max-width: 640px) {
+    .hide-on-small-screen0{  display: none; }
+  }
+
+  @media (max-width: 540px) {
+    .hide-on-small-screen3{  display: none; }
+  }
+
+
+
+
+
+
+
+
+
+
+  
+  .all-tools-left-side {
+    display: flex;
+    flex-direction: column;
+    /* background-color: blue; */
+    justify-content: space-between;
+    height: "auto";
+    width: 440px;
+    margin-right: var(--space-b);
+    }
+
+
+    .all-tools-right-side{
+      /* background-color: yellow; */
+     width: 100%;
+    
+      display: flex;
+      justify-content: stretch;
+      flex-direction: column;
+      margin-top: var(--space-b);
+      margin-bottom: calc(var(--space-b) + var(--space-b));
+      padding: 0;
+      border: 0;
+ 
+    }
+
+
+    .all-tools-line{
+      /* padding-top:   var(--space-a);
+      padding-bottom:var(--space-a); */
+   
+    
+        height: 50px;
+        /* background-color: brown; */
+        padding: 0;
+        border: 0;
+        margin: 0;
+        /* border:1px solid rebeccapurple; */
+      }
+
+
+
+      .logo-cell{
+ 
+        width: 90px;
+    
+        
+      }
+
+      .all-tools-table{
+        /* border-spacing: var(--space-b)  var(--space-a);
+        border-collapse:separate;
+        width: 100%; */
+      }
+
+
+      .all-tools-table td{
+padding-left:var(--space-a)  ;
+padding-right: var(--space-a) ;
+vertical-align: middle; /* Center content vertically if not using flex */
+
+      }
+
+      .all-tools-table td:last-child{
+   
+        padding-right: 0;
+ 
+ 
+ 
+              }
+              .all-tools-table td:first-child{
+                padding-left: 0 ;
+                      }

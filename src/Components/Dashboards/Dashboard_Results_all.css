@@ -1,0 +1,15 @@
+.results_item_in_list{
+    margin-right: var( --space-b);
+    width: 12%; 
+    max-width :100px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+
+   /* white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis; */
+
+   align-items: center;
+   transition: var(--transition-fast)
+}

@@ -1,0 +1,112 @@
+:root {
+  --setting-hight-a: 600px;
+  --setting-hight-a-space: calc(var(--setting-hight-a) + 60px);
+}
+
+.tbody_setting {
+}
+.setting_table {
+  width: 100%;
+  /* border-spacing: var(  --space-d); */
+  /* height: 600px; */
+}
+
+.setting_descriptions {
+  vertical-align: top;
+
+  width: 15%;
+  max-width: 15%;
+  /* width: 200px; */
+  min-width: 100px;
+
+  padding-right: var(--space-d);
+}
+
+.setting_descriptions_one_line {
+  vertical-align: middle;
+  /* background-color: aqua; */
+}
+
+.setting_element {
+  width: auto;
+  min-height: var(--setting-hight-a);
+  max-height: var(--setting-hight-a);
+}
+/* 
+th td {
+
+}
+
+ */
+
+.ShowInUi-table th {
+  text-align: left;
+  padding-bottom: var(--space-c); /* Adjust as needed */
+}
+.ShowInUi-table {
+  padding: var(--space-c);
+  border-spacing: 0 calc(var(--space-b, 0) + var(--space-a, 0));
+}
+
+.log-text {
+  width: auto;
+}
+
+.CodeMirror {
+  font-family: "Roboto", sans-serif;
+  font-size: 14px;
+  line-height: 1.5; /* Optional: Adjust line height as needed */
+}
+
+.text-wrap-logs {
+  text-wrap: pretty;
+}
+.log-section-scrollXYes {
+  overflow-x: auto;
+}
+.log-section-scrollXNo {
+  overflow-x: hidden;
+}
+
+.log-download {
+  color: var(--color-Grey1);
+  border: 2px solid var(--color-Grey2);
+  padding: 5px;
+  border-radius: 15%;
+}
+.log-download:hover {
+  color: var(--color-DB-Blue-Glow);
+  border-color: var(--color-DB-Blue-Glow);
+}
+.log-delete {
+  color: var(--color-Grey1);
+  border: 2px solid var(--color-Grey2);
+  padding: 5px;
+  border-radius: 15%;
+}
+.log-delete:hover {
+  color: var(--color-DB-Blue-Glow);
+  border-color: var(--color-Red);
+}
+
+.log-dropdown {
+  color: var(--color-Grey1);
+  border: 2px solid var(--color-Grey1);
+  border-radius: 15%;
+  margin-right: 10px;
+}
+.log-dropdown:hover {
+  color: var(--color-DB-Blue-Glow);
+  border-color: var(--color-DB-Blue-Glow);
+}
+.RowInLegend {
+  display: flex;
+  flex-direction: row;
+  /* align-items: center; */
+}
+
+.RowInLegendValue {
+  margin-left: 5px;
+  /* word-break: break-all; */
+  text-wrap: pretty;
+}
