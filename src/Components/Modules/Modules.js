@@ -114,80 +114,6 @@ function Modules({
           {/* <div className='top-of-page-center'> placeholder for dropDown  </div> */}
 
           <div className="top-of-page-right">
-            <div
-              style={{
-                marginRight: 15,
-                position: "relative", // Keep relative positioning for dropdown
-                display: "flex",
-                alignItems: "center", // Align button vertically with search
-              }}
-            >
-              <button
-                className={`btn-type2 "btn-type2-no_btn"`}
-                onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
-                style={{
-                  minWidth: "115px",
-                  maxWidth: "122px",
-                  paddingLeft: "var(--space-c)",
-                  paddingRight: "calc(var(--space-c) - 5px)",
-                  height: 36,
-                  margin: 0, // Reset margin
-                }}
-              >
-                <p
-                  className="font-type-menu cutLongLine"
-                >
-                  {ChosenTag}
-                </p>
-              </button>
-              <div
-                className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
-                style={{
-                  top: "calc(100% + 8px)", // Position below button with gap
-                  left: 0, // Align to left edge of container
-                  justifyContent: "center",
-                  alignItems: "center",
-                  display: DropdownTagsShow ? "flex" : "none", // Only display when open
-                  flexDirection: "column",
-                  position: "absolute",
-                  zIndex: 100, // Ensure dropdown appears above other elements
-                  minWidth: "115px",
-                  maxWidth: "122px",
-                  width: "100%",
-                  backgroundColor: "var(--color-Grey3)", // Add background to dropdown container
-                  borderRadius: "var(--elemtns-round-corner-medium)",
-                  padding: "var(--space-a) 0",
-                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)", // Add shadow for better visibility
-                }}
-              >
-                {AllTags?.map((tt, index) => {
-                  // console.log(AllTags, "ttttt", tt);
-                  if (tt == ChosenTag) {
-                    return null; // Use null instead of undefined return
-                  }
-                  return (
-                    <button
-                      key={index} // Add key prop for React list items
-                      className={`btn-type2 "btn-type2-no_btn"`}
-                      onClick={() => HandleTagSelection(tt)}
-                      style={{
-                        width: "calc(100% - var(--space-a) * 2)",
-                        margin: "2px var(--space-a)",
-                        paddingLeft: "var(--space-c)",
-                        paddingRight: "calc(var(--space-c) - 5px)",
-                        backgroundColor: "var(--color-Grey2)",
-                        height: 32, // Slightly smaller height for dropdown items
-                      }}
-                    >
-                      <p className="font-type-menu" style={{}}>
-                        {tt}
-                      </p>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
             <Search_comp
               set_items_for_search={set_all_artifacts_and_modules}
               items_for_search={all_artifacts_and_modules}
@@ -264,6 +190,11 @@ function Modules({
                   set_all_artifacts_and_modules={set_all_artifacts_and_modules}
                   ShowAssets={true}
                   setChosenTag={setChosenTag}
+                  ChosenTag={ChosenTag}
+                  DropdownTagsShow={DropdownTagsShow}
+                  setDropdownTagsShow={setDropdownTagsShow}
+                  HandleTagSelection={HandleTagSelection}
+                  AllTags={AllTags}
                 />
 
                 <PreviewBoxes_main_modules
@@ -289,6 +220,11 @@ function Modules({
                   set_all_artifacts_and_modules={set_all_artifacts_and_modules}
                   ShowAssets={true}
                   setChosenTag={setChosenTag}
+                  ChosenTag={ChosenTag}
+                  DropdownTagsShow={DropdownTagsShow}
+                  setDropdownTagsShow={setDropdownTagsShow}
+                  HandleTagSelection={HandleTagSelection}
+                  AllTags={AllTags}
                 />
               </>
             )}
