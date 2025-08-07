@@ -122,6 +122,7 @@ function Modules({
                 alignItems: "center",
                 display: "flex",
                 flexDirection: "column",
+                position: "relative",
               }}
             >
               <button
@@ -143,14 +144,15 @@ function Modules({
                 </p>
               </button>
               <div
-                className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
+                className="dropdown-menu"
                 style={{
-                  top: 80,
+                  display: DropdownTagsShow ? "flex" : "none",
+                  top: 40,
                   justifyContent: "center",
                   alignItems: "center",
-                  display: "flex",
                   flexDirection: "column",
                   position: "absolute",
+                  zIndex: 1,
                 }}
               >
                 {AllTags?.map((tt) => {
