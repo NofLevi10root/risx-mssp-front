@@ -992,7 +992,8 @@ function PreviewBoxes_main_modules({
                                 textOverflow: "ellipsis",
                                 display: "flex",
                                 justifyContent: "center", // Center tags horizontally
-                                alignItems: "center"
+                                alignItems: "center",
+                                width: "100%" // Ensure full width
                               }}
                               className="column column-small  "
                               onClick={() =>
@@ -1008,24 +1009,24 @@ function PreviewBoxes_main_modules({
                               ) : null}
                               {/* ? (<p className='ml-a    font-type-txt   Color-Red   '> Undefined  </p> ) : null  } */}
                               {Info?.arguments?.tags?.length == 0 ? (
-                                <p className="font-type-txt tagit_type1">
+                                <p className="font-type-txt tagit_type1" style={{ textAlign: "center", width: "100%" }}>
                                   No Tags
                                 </p>
                               ) : null}
                               {Info?.arguments?.tags?.length === 1 ? (
                                 <p
                                   className="font-type-txt Color-Blue-Glow tagit_type1 cutLongLine"
-                                  style={{ maxWidth: "80%" }}
+                                  style={{ maxWidth: "80%", textAlign: "center" }}
                                 >
                                   {Info?.arguments?.tags[0]}
                                 </p>
                               ) : null}
                               {Info?.arguments?.tags?.length > 1 ? (
                                 <>
-                                  <p className="font-type-txt Color-Blue-Glow tagit_type1">
+                                  <p className="font-type-txt Color-Blue-Glow tagit_type1" style={{ textAlign: "center" }}>
                                     {Info?.arguments?.tags[0]}
                                   </p>{" "}
-                                  <p className="ml-a font-type-txt Color-Grey1">
+                                  <p className="ml-a font-type-txt Color-Grey1" style={{ textAlign: "center" }}>
                                     +{Info?.arguments?.tags?.length - 1}
                                   </p>
                                 </>
