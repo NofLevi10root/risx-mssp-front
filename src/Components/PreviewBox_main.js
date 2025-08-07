@@ -41,6 +41,11 @@ function PreviewBoxes_main_modules({
   set_all_artifacts_and_modules,
   ShowAssets = false,
   setChosenTag,
+  ChosenTag,
+  DropdownTagsShow,
+  setDropdownTagsShow,
+  HandleTagSelection,
+  AllTags,
 }) {
   const StatusColor = "blue";
 
@@ -635,50 +640,150 @@ function PreviewBoxes_main_modules({
               className="all-tools-table"
               style={{ margin: 0, padding: 0, border: 0 }}
             >
-              {/* <thead style={{ position: 'sticky', top: 0, backgroundColor: 'var(--color-Grey5)', zIndex: 1  }}>
-                    <tr  style={{ textAlign: 'left' ,height:"30px"}}>
-                      <th className='font-type-menu Color-Grey1' style={{}}>{list_array_column1?.previewName}</th>
-                    </tr>
-                  </thead> */}
+              {/* Table Header with column titles */}
+              <thead style={{ 
+                position: 'sticky', 
+                top: 0, 
+                backgroundColor: 'var(--color-Black)', 
+                zIndex: 10,
+                borderBottom: '2px solid var(--color-Grey3)'
+              }}>
+                <tr style={{ height: "45px" }}>
+                  <th style={{ width: "30px" }}></th>
+                  <th style={{ width: "108px" }}></th>
+                  <th style={{ width: "250px" }}>
+                    <p className="font-type-menu Color-Grey1">Module</p>
+                  </th>
+                  <th className="hide-on-small-screen1" style={{ width: "30%" }}>
+                    <p className="font-type-menu Color-Grey1">Description</p>
+                  </th>
+                  <th className="hide-on-small-screen3">
+                    <p className="font-type-menu Color-Grey1"></p>
+                  </th>
+                  <th style={{ minWidth: "115px", maxWidth: "122px" }}>
+                    <p className="font-type-menu Color-Grey1">Action</p>
+                  </th>
+                  {ShowAssets && (
+                    <th style={{ minWidth: "150px", maxWidth: "150px", position: "relative" }}>
+                      {/* Tags dropdown button in header */}
+                      <div style={{ position: "relative", display: "inline-block" }}>
+                        <button
+                          className={`btn-type2 "btn-type2-no_btn"`}
+                          onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
+                          style={{
+                            minWidth: "115px",
+                            maxWidth: "122px",
+                            paddingLeft: "var(--space-c)",
+                            paddingRight: "calc(var(--space-c) - 5px)",
+                            height: 36,
+                            margin: 0,
+                          }}
+                        >
+                          <p className="font-type-menu cutLongLine">
+                            {ChosenTag}
+                          </p>
+                        </button>
+                        <div
+                          className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
+                          style={{
+                            top: "calc(100% + 4px)",
+                            left: 0,
+                            justifyContent: "center",
+                            alignItems: "center",
+                            display: DropdownTagsShow ? "flex" : "none",
+                            flexDirection: "column",
+                            position: "absolute",
+                            zIndex: 100,
+                            minWidth: "115px",
+                            maxWidth: "122px",
+                            width: "100%",
+                            backgroundColor: "var(--color-Grey3)",
+                            borderRadius: "var(--elemtns-round-corner-medium)",
+                            padding: "var(--space-a) 0",
+                            boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)",
+                          }}
+                        >
+                          {AllTags?.map((tt, index) => {
+                            if (tt == ChosenTag) {
+                              return null;
+                            }
+                            return (
+                              <button
+                                key={index}
+                                className={`btn-type2 "btn-type2-no_btn"`}
+                                onClick={() => HandleTagSelection(tt)}
+                                style={{
+                                  width: "calc(100% - var(--space-a) * 2)",
+                                  margin: "2px var(--space-a)",
+                                  paddingLeft: "var(--space-c)",
+                                  paddingRight: "calc(var(--space-c) - 5px)",
+                                  backgroundColor: "var(--color-Grey2)",
+                                  height: 32,
+                                }}
+                              >
+                                <p className="font-type-menu">
+                                  {tt}
+                                </p>
+                              </button>
+                            );
+                          })}
+                        </div>
+                      </div>
+                    </th>
+                  )}
+                  <th className="hide-on-small-screen2" style={{ minWidth: "95px" }}>
+                    <p className="font-type-menu Color-Grey1">Last Run</p>
+                  </th>
+                  <th style={{ width: "40px" }}></th>
+                </tr>
+              </thead>
               <tbody style={{ margin: 0, padding: 0, border: 0 }}>
                 {!is_filtering &&
                   preview_list.length === 0 &&
                   all_Tools.length > 0 &&
                   all_artifacts.length > 0 && (
-                    <div style={{ textAlign: "center" }}>
-                      <p className="font-type-txt  Color-Grey1   cutLongLine">
-                        It seems that all Modules are hidden in the UI. To
-                        change:
-                      </p>
-                      <p className="font-type-txt  Color-Grey1   cutLongLine">
-                        Click{" "}
-                        <span className="font-type-menu Color-White">
-                          Settings
-                        </span>{" "}
-                        in the side menu
-                      </p>
-                      <p className="font-type-txt  Color-Grey1   cutLongLine">
-                        Choose{" "}
-                        <span className="font-type-menu Color-White">
-                          UI Stings
-                        </span>{" "}
-                        from the top menu
-                      </p>
-                      <p className="font-type-txt  Color-Grey1   cutLongLine">
-                        Check the boxes to set UI display
-                      </p>
-                    </div>
+                    <tr>
+                      <td colSpan="9">
+                        <div style={{ textAlign: "center", padding: "20px" }}>
+                          <p className="font-type-txt  Color-Grey1   cutLongLine">
+                            It seems that all Modules are hidden in the UI. To
+                            change:
+                          </p>
+                          <p className="font-type-txt  Color-Grey1   cutLongLine">
+                            Click{" "}
+                            <span className="font-type-menu Color-White">
+                              Settings
+                            </span>{" "}
+                            in the side menu
+                          </p>
+                          <p className="font-type-txt  Color-Grey1   cutLongLine">
+                            Choose{" "}
+                            <span className="font-type-menu Color-White">
+                              UI Stings
+                            </span>{" "}
+                            from the top menu
+                          </p>
+                          <p className="font-type-txt  Color-Grey1   cutLongLine">
+                            Check the boxes to set UI display
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
                   )}
 
                 {is_filtering &&
                   preview_list.length === 0 &&
                   all_Tools.length > 0 &&
                   all_artifacts.length > 0 && (
-                    <div style={{ textAlign: "center" }}>
-                      <p className="font-type-txt  Color-Grey1   cutLongLine">
-                        There are no results for this filter
-                      </p>
-                    </div>
+                    <tr>
+                      <td colSpan="9">
+                        <div style={{ textAlign: "center", padding: "20px" }}>
+                          <p className="font-type-txt  Color-Grey1   cutLongLine">
+                            There are no results for this filter
+                          </p>
+                        </div>
+                      </td>
+                    </tr>
                   )}
 
                 {Array.isArray(preview_list) &&
