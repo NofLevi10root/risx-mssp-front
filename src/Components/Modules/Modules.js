@@ -116,25 +116,22 @@ function Modules({
           <div className="top-of-page-right">
             <div
               style={{
-                width: 150,
                 marginRight: 15,
-                justifyContent: "center",
-                alignItems: "center",
+                position: "relative", // Keep relative positioning for dropdown
                 display: "flex",
-                flexDirection: "column",
-                position: "relative", // Add relative positioning to the container
+                alignItems: "center", // Align button vertically with search
               }}
             >
               <button
                 className={`btn-type2 "btn-type2-no_btn"`}
                 onClick={() => setDropdownTagsShow(!DropdownTagsShow)}
                 style={{
-                  width: "100%",
                   minWidth: "115px",
                   maxWidth: "122px",
                   paddingLeft: "var(--space-c)",
                   paddingRight: "calc(var(--space-c) - 5px)",
                   height: 36,
+                  margin: 0, // Reset margin
                 }}
               >
                 <p
@@ -146,8 +143,8 @@ function Modules({
               <div
                 className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
                 style={{
-                  top: "100%", // Position right below the button
-                  marginTop: 8, // Add small gap between button and dropdown
+                  top: "calc(100% + 8px)", // Position below button with gap
+                  left: 0, // Align to left edge of container
                   justifyContent: "center",
                   alignItems: "center",
                   display: DropdownTagsShow ? "flex" : "none", // Only display when open
