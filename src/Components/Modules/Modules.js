@@ -122,6 +122,7 @@ function Modules({
                 alignItems: "center",
                 display: "flex",
                 flexDirection: "column",
+                position: "relative", // Add relative positioning to the container
               }}
             >
               <button
@@ -145,30 +146,40 @@ function Modules({
               <div
                 className={`dropdown-menu ${DropdownTagsShow ? "open" : ""}`}
                 style={{
-                  top: 80,
+                  top: "100%", // Position right below the button
+                  marginTop: 8, // Add small gap between button and dropdown
                   justifyContent: "center",
                   alignItems: "center",
-                  display: "flex",
+                  display: DropdownTagsShow ? "flex" : "none", // Only display when open
                   flexDirection: "column",
                   position: "absolute",
+                  zIndex: 100, // Ensure dropdown appears above other elements
+                  minWidth: "115px",
+                  maxWidth: "122px",
+                  width: "100%",
+                  backgroundColor: "var(--color-Grey3)", // Add background to dropdown container
+                  borderRadius: "var(--elemtns-round-corner-medium)",
+                  padding: "var(--space-a) 0",
+                  boxShadow: "0 4px 6px rgba(0, 0, 0, 0.3)", // Add shadow for better visibility
                 }}
               >
-                {AllTags?.map((tt) => {
+                {AllTags?.map((tt, index) => {
                   // console.log(AllTags, "ttttt", tt);
                   if (tt == ChosenTag) {
-                    return;
+                    return null; // Use null instead of undefined return
                   }
                   return (
                     <button
+                      key={index} // Add key prop for React list items
                       className={`btn-type2 "btn-type2-no_btn"`}
                       onClick={() => HandleTagSelection(tt)}
                       style={{
-                        width: "100%",
-                        minWidth: "115px",
-                        maxWidth: "122px",
+                        width: "calc(100% - var(--space-a) * 2)",
+                        margin: "2px var(--space-a)",
                         paddingLeft: "var(--space-c)",
                         paddingRight: "calc(var(--space-c) - 5px)",
                         backgroundColor: "var(--color-Grey2)",
+                        height: 32, // Slightly smaller height for dropdown items
                       }}
                     >
                       <p className="font-type-menu" style={{}}>
