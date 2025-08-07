@@ -406,7 +406,18 @@ p{color: var(--color-White);
 
 }
 
+/* Special styling for search input in top-of-page-right context */
+.top-of-page-right .resource-group-Right-Action_btns .input-type1 {
+  height: 32px; /* Match button height minus border */
+  padding-top: 7px;
+  padding-bottom: 7px;
+}
 
+.top-of-page-right .resource-group-Right-Action_btns .search_filter-btns {
+  height: 36px; /* Match full button height */
+  display: flex;
+  align-items: center;
+}
 
 
 
